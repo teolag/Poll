@@ -1,0 +1,6 @@
+{
+	"name": "poll",
+	"script": "server/app.js",
+	"watch": ["server"],
+	"ignore_watch": ["boll.txt", "db", "server/db"]
+}

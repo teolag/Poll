@@ -1,0 +1,30 @@
+<% include header %>
+
+<h1>Create a new poll</h1>
+
+
+<form action="/new" method="post" name="new_poll">
+
+	<label for="txtQuestion">Question</label>
+	<input type="text" name="question" id="txtQuestion" placeholder="How many bolts has the 'Ölandsbron'?" autofocus />
+
+	<fieldset>
+		<legend>Enter alternatives:</legend>
+		<ul class="answer-list">
+			<li><input type="text" name="answer" /></li>
+		</ul>
+	</fieldset>
+
+	<div class="button-set">
+		<button type="submit">
+			Save
+		</button>
+	</div>
+
+</form>
+
+
+
+
+
+<% include footer %>

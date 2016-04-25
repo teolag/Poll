@@ -1,0 +1,83 @@
+html {
+	background-color: #483064;
+	font: 100% sans-serif;
+	height: 100%;
+	color: #444;
+}
+
+input, textarea, select, button {
+	font: inherit;
+}
+
+input {
+	padding: 0.5em;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+button {
+	padding: 0.5em 2em;
+	background-color: #6A9C65;
+	color: white;
+	border: 0;
+	border-radius: 0.2em;
+	cursor: pointer;
+}
+
+.button-set {
+	text-align: right;
+	margin-top: 1.5em;
+}
+
+body {
+	height: 100%;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	padding: 2em;
+	background-color: white;
+	max-width: 30em;
+	text-align: center;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+
+button.answer {
+	display: block;
+	width: 100%;
+	padding: 0.5em;
+	margin: 0.3em auto;
+	background-color: #CDE6CA;
+	color: #40376D;
+	max-width: 20em;
+}
+button.answer:hover {
+	background-color: #6A9C65;
+	color: white;
+}
+
+fieldset {
+	margin: 1em 0;
+	padding: 0;
+	border: 0;
+}
+
+label {
+	display: block;
+}
+
+.answer-list {
+	padding: 0;
+	margin: 0;
+}
+.answer-list li {
+	list-style-type: none;
+}

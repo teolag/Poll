@@ -1,0 +1,9 @@
+<% include header %>
+<h1><%= poll.question %></h1>
+
+	<% poll.answers.forEach(function(item, index) { %>
+		<% var percent = (item.count? (item.count/poll.totalAnswers) : 0); %>
+		[<%=index%>] <%=item.answer%>: <%=item.count%> (<%=Math.round(percent*100)%>%)<br />
+	<% }); %>
+
+<% include footer %>

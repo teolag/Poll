@@ -1,0 +1,10 @@
+<% include header %>
+<h1><%= poll.question %></h1>
+
+<form name="answer_poll" method="post" action="/<%= poll._id %>">
+	<% poll.answers.forEach(function(item, index) { %>
+		<button type="submit" name="answer" value="<%=index%>" class="answer"><%=item.answer%></button>
+	<% }); %>
+</form>
+
+<% include footer %>

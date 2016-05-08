@@ -1,33 +1,38 @@
 "use strict";
 
 var http = require('http'),
-	Logger = require('../../chat/server/Logger'),
 	config = require('./config'),
-	express = require('express'),
-	routes = require('./routes'),
-	app = express();
+	socker = require('./sockerServer'),
+	pollHandler = require('./pollHandler'),
+	server = http.createServer(incomingRequest);
 
-Logger("Start poll");
+console.log("Starting Poll");
 process.on("exit", processEnded);
+server.listen(config.port, startListening);
+
+socker.init(server, {
+	allowedOrigin: config.allowedOrigin,
+	allowedProtocol: config.allowedProtocol,
+	connectCallback: connectCallback
+});
+
+function connectCallback(con) {
+	pollHandler.loadAll(function(polls) {
+		socker.sendTo(con, "poll-list", {polls:polls});
+	});
+}
 
 
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
-app.use(express.static('public'));
-app.listen(config.port, startListening);
-
-var routes = routes(app);
-
+function incomingRequest(req, res) {
+	console.log("Incoming request", req.url);
+	res.end("This is not the page you are looking for");
+}
 
 function processEnded(code) {
-	Logger("Process ended. Code " + code);
+	console.log("Process ended. Code " + code);
 	console.log("\n \n \n");
 }
 
 function startListening() {
-    Logger('Poll server is listening on port ' + config.port);
+    console.log('Poll server is listening on port ' + config.port);
 }
-
-
-
-

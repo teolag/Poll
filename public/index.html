@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Poll</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="/style.css" type="text/css" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="/">Home</a>
+				<a href="/polls">Polls</a>
+				<a href="/new">Create new poll</a>
+			</nav>
+		</header>
+
+		<main>
+
+
+			<section class="area" data-area="start" style="display:none">
+				<h1>Welcome</h1>
+			</section>
+
+			<section class="area" data-area="polls" style="display:none">
+				<h1>Polls</h1>
+				<div class="poll-list"></div>
+			</section>
+
+			<section class="area" data-area="poll" style="display:none">
+				<h1 class="poll-question">Poll ....</h1>
+				<div class="answer-list"></div>
+			</section>
+
+			<section class="area" data-area="new" style="display:none">
+				<h1>Create Poll</h1>
+				<form name="pollCreate">
+					<label for="txtQuestion">Question</label>
+					<input type="text" name="question" id="txtQuestion" placeholder="Enter a question" autofocus />
+
+					<fieldset>
+						<legend>Enter alternatives:</legend>
+						<ul class="answer-list">
+							<li><input type="text" name="answer" /></li>
+						</ul>
+					</fieldset>
+
+					<div class="button-set">
+						<button type="submit">
+							Save
+						</button>
+					</div>
+				</form>
+			</section>
+
+		</main>
+
+
+
+
+		<script src="/Sections.js"></script>
+		<script src="/Nav.js"></script>
+		<script src="/sockerClient.js"></script>
+		<script src="/poll.js"></script>
+		<script src="/main.js"></script>
+	</body>
+</html>
